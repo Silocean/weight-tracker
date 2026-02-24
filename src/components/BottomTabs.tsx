@@ -15,7 +15,10 @@ const TABS: { key: TabKey; label: string; icon: typeof ClipboardPen }[] = [
 
 export default function BottomTabs({ active, onChange }: BottomTabsProps) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 sm:hidden">
+    <nav
+      className="fixed inset-x-0 bottom-0 z-40 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 sm:hidden"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+    >
       <div className="flex items-stretch h-14 max-w-lg mx-auto">
         {TABS.map(({ key, label, icon: Icon }) => {
           const isActive = active === key
@@ -37,7 +40,6 @@ export default function BottomTabs({ active, onChange }: BottomTabsProps) {
           )
         })}
       </div>
-      <div className="h-[env(safe-area-inset-bottom)]" />
     </nav>
   )
 }
