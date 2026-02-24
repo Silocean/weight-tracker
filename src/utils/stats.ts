@@ -1,4 +1,4 @@
-import { subDays, parseISO, differenceInCalendarDays, format } from 'date-fns'
+import { subDays, parseISO, format } from 'date-fns'
 import type { WeightRecord, WeightStats } from '../types'
 
 export function computeStats(records: WeightRecord[]): WeightStats {
