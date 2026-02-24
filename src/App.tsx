@@ -94,7 +94,7 @@ export default function App() {
 
       {/* Mobile */}
       <div className="sm:hidden flex-1 overflow-y-auto">
-        <main className="max-w-lg mx-auto px-4 pt-4 pb-[calc(1rem+56px)] flex flex-col gap-4">
+        <main className="max-w-lg mx-auto px-4 pt-4 pb-[calc(1rem+56px+env(safe-area-inset-bottom))] flex flex-col gap-4">
           {tab === 'record' && (
             <>
               <div className="animate-fade-in">
