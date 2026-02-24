@@ -23,7 +23,7 @@ export default function BottomTabs({ active, onChange }: BottomTabsProps) {
             <button
               key={key}
               onClick={() => onChange(key)}
-              className={`flex-1 flex flex-col items-center justify-end pb-[max(8px,calc(env(safe-area-inset-bottom)-6px))] gap-0.5 transition-colors ${
+              className={`flex-1 flex flex-col items-center justify-end pb-2 gap-0.5 transition-colors ${
                 isActive
                   ? 'text-primary-600 dark:text-primary-400'
                   : 'text-gray-400 dark:text-gray-500'
