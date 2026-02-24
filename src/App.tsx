@@ -68,7 +68,7 @@ export default function App() {
   } as const
 
   return (
-    <div className="h-dvh flex flex-col">
+    <div className="fixed inset-0 flex flex-col">
       <Header
         settings={settings}
         onToggleDarkMode={toggleDarkMode}
