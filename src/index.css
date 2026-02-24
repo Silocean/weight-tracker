@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #f0f0ff;
+  --color-primary-100: #e0e1ff;
+  --color-primary-200: #c7c8fe;
+  --color-primary-300: #a5a4fc;
+  --color-primary-400: #8882f8;
+  --color-primary-500: #7566f1;
+  --color-primary-600: #6749e6;
+  --color-primary-700: #593bcb;
+  --color-primary-800: #4831a4;
+  --color-primary-900: #3d2d85;
+  --color-primary-950: #241a5a;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased;
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply dark:invert dark:opacity-60;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+}
